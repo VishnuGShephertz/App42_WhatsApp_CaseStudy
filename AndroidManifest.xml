@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app42messanger"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+    -->
+    <permission
+        android:name="com.example.app42messanger.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.app42messanger.permission.C2D_MESSAGE" />
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:name="com.shephertz.app42.message.App42ChatApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" 
+        android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar"
+        >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.shephertz.app42.message.ui.SignInActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />  
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.shephertz.app42.message.ui.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+ <activity
+            android:name="com.shephertz.app42.message.ui.HomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+         <activity
+            android:name="com.shephertz.app42.message.ui.GroupCreationActivity"
+            android:label="@string/app_name" >
+        </activity>
+         <activity
+            android:name="com.shephertz.app42.message.ui.ProfileActivity"
+            android:label="@string/app_name" >
+        </activity>
+          <activity
+            android:name="com.shephertz.app42.message.ui.GroupCreationActivity"
+            android:label="@string/app_name" >
+        </activity>
+         <activity
+            android:name="com.shephertz.app42.message.ui.FriendSelectionActivity"
+            android:label="@string/app_name" >
+        </activity>
+         <activity
+            android:name="com.shephertz.app42.message.ui.GroupInfoActivity"
+            android:label="@string/app_name"
+             android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"> >
+        </activity>
+         <activity
+            android:name="com.shephertz.app42.message.ui.ChatActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+        </activity>
+          <activity
+            android:name="com.shephertz.app42.message.ui.GroupChatActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+        </activity>
+        <service android:name="com.shephertz.app42.message.push.App42GCMService" >
+        </service>
+
+        <receiver
+            android:name="com.shephertz.app42.message.push.App42GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <!-- Your package name here -->
+                <category android:name="com.example.app42messanger" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver" android:exported="true">
+  <intent-filter>
+    <action android:name="com.android.vending.INSTALL_REFERRER" />
+  </intent-filter>
+</receiver>
+
+         <service android:name="com.shephertz.app42.message.backgroud.tast.ContactSysncService" />
+        <receiver android:name="com.shephertz.app42.message.backgroud.tast.AlarmReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                    <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                 
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

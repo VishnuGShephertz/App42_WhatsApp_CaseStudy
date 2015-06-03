@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/group_pic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/default_icon" />
+
+    <ImageView
+        android:id="@+id/edit_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        android:background="@android:drawable/ic_menu_edit"
+        android:onClick="onImgaeChange" />
+
+    <TextView
+        android:id="@+id/group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/edit_icon"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/group_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_name"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/edit_icon"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/edit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+         android:clickable="true"
+        android:background="@android:drawable/ic_menu_edit"
+        android:onClick="onNameChange" />
+     <ImageView
+        android:id="@+id/add_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+         android:clickable="true"
+        android:layout_below="@+id/edit_name"
+        android:background="@android:drawable/ic_menu_add"
+        android:visibility="gone"
+        android:onClick="onAddFriends" />
+
+    <TextView
+        android:id="@+id/partcipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_icon"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+      
+        android:text="@string/group_participants"
+        android:textSize="18dp" />
+ <Button
+        android:id="@+id/exit_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+         android:clickable="true"
+        android:layout_below="@+id/edit_icon"
+         android:text="@string/exit_group"
+        android:onClick="onGroupExit" />
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/partcipants"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/speech_bubble_orange" >
+
+    <TextView
+        android:id="@+id/chat_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:singleLine="true"
+        android:text="swxwwx"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/chat_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chat_user"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:singleLine="false"
+        android:text="swxwwx"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_message"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@+id/chat_message"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:singleLine="true"
+        android:text="swxwwx"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

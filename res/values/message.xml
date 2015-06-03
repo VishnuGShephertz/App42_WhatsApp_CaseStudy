@@ -1,0 +1,14 @@
+<resources>
+	<string name="try_again">Please try again, Later</string>
+	<string name="registering_device">Please wait..., registering device on App42</string>
+	<string name="mandotory_field">Each field is mandatory</string>
+	<string name="empty_message">No data found</string>
+	<string name="group_mandatory">Please enter Group Name</string>
+	<string name="group_creation_success">Group is Created</string>
+	<string name="group_creation">Please provide group icon and group name to create group.</string>
+	<string name="profile_icon_desc">Upload / Change Profile icon here.</string>
+	<string name="unsubscribe_group_message">Unsubscribing from group... wait</string>
+	<string name="unsubscribe_group_success_message">You are successfully removed from Group</string>
+	<string name="upload_image_message">Uploading image... wait</string>
+	<string name="fetching_group_members">Retrieving group members... wait</string>
+</resources>

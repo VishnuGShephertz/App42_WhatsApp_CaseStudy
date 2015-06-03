@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/chat_list_parent"
+   >
+  <include layout="@layout/header_chat"
+      android:layout_alignParentTop="true"/>
+
+    <ListView
+        android:id="@+id/chat_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer_layout"
+        android:layout_below="@+id/header_chat"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@android:color/transparent" />
+    <include
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/footer_chat" />
+    <LinearLayout
+        android:id="@+id/footer_for_emoticons"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyboard_height"
+        android:background="@android:color/transparent"
+        android:visibility="gone" />
+</RelativeLayout>
